@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Audio Player</title>
+
+<link rel="stylesheet" href="css/style.css" />
+
+<script src="js/controller.js"></script>
+<script src="js/instrument.js"></script>
+<script src="js/tone.js"></script>
+
+<script src="js/model.js"></script>
+<script src="js/melody.js"></script>
+<script src="js/note.js"></script>
+<script src="js/apple.js"></script>
+
+<script src="js/viewer.js"></script>
+<script src="js/track.js"></script>
+<script src="js/basket.js"></script>
+
+<script src="js/runtime.js"></script>
+<script src="js/event.js"></script>
+
+</head>
+
+<body>
+
+<h1>Please Input the Number Key (1 ~ 7)</h1>
+
+<p><button id="btn-start">Click HERE or press ENTER to start!</button></p>
+
+<div id="stage">
+    <ul id="track-list"></ul>
+    <ul id="basket-list"></ul>
+</div>
+
+<pre>/**
+    Construct a controller
+    @param {Array&lt;string&gt;} typeList The instrument type list, here only 'piano' available
+    @example
+        var controller = new Controller(['piano']);
+ */
+function Controller(typeList)
+
+
+/**
+    Play a tone
+    @param {string} type The instrument type, here only 'piano' available
+    @param {integer} code The tone number, here only 1 ~ 7
+    @example
+        var controller = new Controller(['piano']);
+        controller.play('piano', 3);
+ */
+Controller.prototype.play(type, code)</pre>
+
+<script src="js/input.piano.js"></script>
+<script src="js/input.melody.js"></script>
+
+<script>
+var controller = new Controller(['piano']);
+var viewer = new Viewer();
+var model = new Model(new Melody(input));
+
+model.convert();
+
+document.getElementById('btn-start').onclick = function () {
+    viewer.start(model.appleList);
+};
+</script>
+
+</body>
+
+</html>
