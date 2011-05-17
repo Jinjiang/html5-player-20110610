@@ -1,6 +1,7 @@
 function Model(melody) {
     this.melody = melody;
     this.appleList = [];
+    this.noteList = [];
 }
 
 Model.prototype.convert = function () {

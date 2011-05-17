@@ -4,7 +4,16 @@ function Tone(type, code) {
     this.audioList = [];
     
     // var src = 'audio/' + this.type + '/' + (this.code - (-1)) + '.ogg';
-    var src = window[type.toUpperCase() + '_OGG'][code - (-1)];
+    var src;
+    if (type == 'piano') {
+        src = window[type.toUpperCase() + '_OGG'][code - (-1)];
+    }
+    else if (type == 'guitar') {
+        src = 'mp3/' + this.type + '/' + (this.code) + '.mp3';
+    }
+    else {
+        src = 'ogg/' + this.type + '/' + (this.code - (-1)) + '.ogg';
+    }
 
     for (var i = 0; i < this.MAX_OFFSET; i++) {
         var audio = new Audio;

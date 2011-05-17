@@ -23,7 +23,7 @@ Viewer.prototype.start = function (appleList) {
     var that = this;
     appleList.forEach(function (apple) {
         setTimeout(function () {
-            that.trackList[apple.track].drop();
-        }, 500 * apple.time);
+            that.trackList[apple.track - 1].drop();
+        }, 760 * apple.time);
     });
 };

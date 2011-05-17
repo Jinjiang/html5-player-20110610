@@ -68,3 +68,31 @@ button {
     border: 2px blue solid;
     margin-bottom: 20px;
 }
+
+
+.tab-list {
+    overflow: hidden;
+}
+.tab-list > a {
+    float: left;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.tab-list > a.current {
+    background: #eee;
+}
+.tab-list > a:hover {
+    color: white;
+    background: gray;
+}
+.content-list {
+    margin-bottom: 20px;
+}
+.content-list > pre {
+    border-top: 1px black solid;
+    padding: 10px;
+    display: none;
+}
+.content-list > pre.current {
+    display: none;
+}
