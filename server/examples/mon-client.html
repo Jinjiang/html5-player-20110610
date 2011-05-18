@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>WebSocket & Node.JS Test Page</title>
+<style>
+#io_0,#io_1,#io_2 {background: blue; color: white; padding: 5px; }
+#io_3,#io_4,#io_5 {background: green; color: white; padding: 5px; }
+#io_6,#io_7,#io_8 {background: red; color: white; padding: 5px; }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+
+<body>
+ 
+<!-- KB/t tps  MB/s  us sy id   1m   5m   15m -->
+<table width=480>
+<thead><td colspan=3>disk</td><td colspan=3>cpu</td><td colspan=3>uptime</td></thead>
+<tbody id="iotitle"></tbody>
+<tbody id="iobody"></tbody>
+</tr>
+</table>
+ 
+<form id="msgForm">
+<input size=50 type="text" id="inputMessage" value="Hello" ><button
+id="sendButton">Send</button>
+</form>
+ 
+<pre id="output"></pre>
+ 
+<script>
+ 
+var output = $("#output");
+ 
+var log = function (s) {
+    if (document.readyState !== "complete") {
+        log.buffer.push(s);
+    }
+    else {
+        output.prepend(s + "\n");
+    }
+}
+log.buffer = [];
+var hostname = location.hostname;
+var port = location.port;
+// url = "ws://" + hostname + ":" + port + "/echo";
+url = "ws://127.0.0.1:8080/echo";
+w = new WebSocket(url);
+w.onopen = function () {
+    log("open");
+    w.send("thank you for the request");
+}
+w.onmessage = function(e) {
+	var msg = e.data;
+	if (msg.match(/#mon/)) {
+		var monarr = msg.split(":")[1].split(" ");
+		var body = "";
+		for(var item in monarr) {
+			body += "<td id='io_" + item + "'>" + monarr[item] + "</td>"
+		}
+		$("#iobody").html(body);
+		//log(monarr[0]);
+	}
+	else {
+    	log(e.data);
+    }
+}
+w.onclose = function (e) {
+    log("closed");
+}
+function sendMessage() {
+    w.send($("#inputMessage").val());
+}
+window.onload = function () {
+	var headers = ["KB/t", "tps", "MB/s", "user", "system", "idle", "1m", "5m", "15m"];
+	for(var item in headers) {
+		$("#iotitle").append("<td>" + headers[item] + "</td>");
+	}
+    log(log.buffer.join("\n"));
+    $("#msgForm").submit(function () {
+        event.preventDefault();
+        sendMessage();
+        $("#inputMessage").val("");
+	});
+};
+</script>
+ 
+</body>
+</html>
