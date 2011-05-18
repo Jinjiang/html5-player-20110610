@@ -1,0 +1,49 @@
+require('websocket-server') // ws
+ws.createServer([options]) // server
+    options: {debug: false, version: 'auto', storage, origin, subprotocol}
+
+    
+server.manager
+server.send(client_id, message)
+server.broadcast(message)
+server.listen(port, [host])
+server.setSecure(credentials)
+server.close()
+
+server.addListener(event, callback)
+server.removeListener(event, callback)
+server.removeAllListeners(event)
+
+server.addListener('connection', function (connection) {}) // connection
+server.addListener('close', function (connection) {}) // connection
+server.addListener('shutdown', function () {})
+
+
+server.manager.length
+server.manager.find(id, callback, [thisArg])
+server.manager.forEach(callback, [thisArg])
+server.manager.map(callback, [thisArg])
+server.manager.filter(callback, [thisArg])
+
+
+connection.id
+connection.state // [0-6]: unknown/open/wait/handshak/connected/close/closed
+connection.version
+connection.headers
+connection.storage
+connection.send(data)
+connection.broadcast(data)
+connection.close()
+connection.reject([reason])
+
+connection.addListener(event, callback)
+connection.removeListener(event, callback)
+connection.removeAllListeners(event)
+
+connection.addListener('close', function () {})
+connection.addListener('rejected', function () {})
+connection.addListener('message', function (data) {})
+connection.addListener('stateChange', function (new_state, old_state) {})
+
+
+
