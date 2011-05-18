@@ -1,15 +1,18 @@
 ﻿var sys = require("sys");
-var ws = require('../lib/ws/server');
+var ws = require('./lib/ws/server');
 
-var server = ws.createServer({debug: true});
+var server = ws.createServer({debug: false});
 
 var playerMap = {};
 
 server.addListener('connection', function (connection) {
 
+    console.log('CONNECTED:     ' + connection.id);
     connection.addListener('message', initMessage);
 
 });
+
+server.listen(8080);
 
 function parseMessage(data) {
     var result;
@@ -38,13 +41,16 @@ function initMessage(data) {
         this.addListener('message', clientMessage);
         this.removeListener('message', initMessage);
         this.send('connected:' + this.id);
+        console.log('ADDED CLIENT:  ' + data.content, this.id);
         break;
     case 'player':
         playerMap[data.content] = this;
         this.removeListener('message', initMessage);
         this.send('connected:' + this.id);
+        console.log('ADDED PLAYER:  ' + data.content, this.id);
         break;
     default:
+    console.log('REJECT:        ' + data.type, data.content);
         this.reject('not an acceptable request');
     }
 }
@@ -58,6 +64,7 @@ function clientMessage(data) {
 
     var player = playerMap[data.type];
     if (player) {
+        console.log('PLAY:          ' + data.type, data.content);
         player.send(data.content);
     }
 }
