@@ -65,7 +65,7 @@ function clientMessage(data) {
     var player = playerMap[data.type];
     if (player) {
         console.log('PLAY:          ' + data.type, data.content);
-        player.send(data.content);
+        player.send(data.type + ':' + data.content);
     }
 }
 

@@ -1,0 +1,40 @@
+﻿body, select, button {
+    font-family: Consolas;
+    font-size: 24px;
+}
+
+#keyboard-show {
+    position: relative;
+    width: 420px;
+    height: 120px;
+    list-style: none;
+}
+#keyboard-show button {
+    position: absolute;
+    display: block;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    background: aqua;
+    line-height: 55px;
+    font-size: 24px;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+#keyboard-show sub {
+    color: gray;
+}
+#key-1 {left: 0; top: 60px;}
+#key-2 {left: 30px; top: 0;}
+#key-3 {left: 60px; top: 60px;}
+#key-4 {left: 90px; top: 0;}
+#key-5 {left: 120px; top: 60px;}
+#key-6 {left: 180px; top: 60px;}
+#key-7 {left: 210px; top: 0;}
+#key-8 {left: 240px; top: 60px;}
+#key-9 {left: 270px; top: 0;}
+#key-10 {left: 300px; top: 60px;}
+#key-11 {left: 330px; top: 0;}
+#key-12 {left: 360px; top: 60px;}
+
