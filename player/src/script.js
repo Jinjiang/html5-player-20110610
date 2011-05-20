@@ -92,6 +92,11 @@ Instrument.prototype.connect = function () {
 Instrument.prototype.play = function (code) {
     this.lastCode = code;
     console.log('PLAYING:', this.type, this.lastCode);
+    var audio = new Audio;
+    var url = this.type + '/' + this.lastCode + '.mp3';
+    console.log(url);
+    audio.src = url;
+    audio.play();
 };
 
 Instrument.prototype.open = function () {

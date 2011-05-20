@@ -18,6 +18,9 @@ function parseMessage(data) {
     var result;
 
     data = data.match(/(\w+)\:(\w+)/);
+    // client:jinjiang
+    // player:piano
+    // piano:1
 
     if (data) {
         result = {};

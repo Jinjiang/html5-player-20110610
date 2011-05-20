@@ -1,18 +1,4 @@
-﻿var keyMap = {
-    65: {value: 1, name: 'Do', keyboard: 'A'},
-    87: {value: 2, name: 'Du', keyboard: 'W'},
-    83: {value: 3, name: 'Re', keyboard: 'S'},
-    69: {value: 4, name: 'Me', keyboard: 'E'},
-    68: {value: 5, name: 'Mi', keyboard: 'D'},
-    70: {value: 6, name: 'Fa', keyboard: 'F'},
-    84: {value: 7, name: 'Fi', keyboard: 'T'},
-    71: {value: 8, name: 'So', keyboard: 'G'},
-    89: {value: 9, name: 'Su', keyboard: 'Y'},
-    72: {value: 10, name: 'La', keyboard: 'H'},
-    85: {value: 11, name: 'Ti', keyboard: 'U'},
-    74: {value: 12, name: 'Si', keyboard: 'J'}
-};
-var stepMap = {
+﻿var stepMap = {
     1: {name: '低音', keyboard: 'ALT + '},
     2: {name: '正常音', keyboard: ''},
     3: {name: '高音', keyboard: 'SHIFT + '},
@@ -68,7 +54,7 @@ function keydown(evt) {
 }
 
 function play(key, step) {
-    var result = key.value + (step - 1) * 12;
+    var result = key.value + (step - 2) * 12;
     var type = $('#type-select').val();
     var message = type + ':' + result;
     var path = type + '/' + result + '.mp3';
