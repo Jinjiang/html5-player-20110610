@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" 
+  content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <style>
+            html {
+                width: 100%;
+                height: 100%;
+            }
+            
+            body {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .first-line {
+                width: 70.83%;
+                height: 21.875%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 7%;
+            }
+            
+            .first-line .left {
+                width: 17.06%;
+                height: 100%;
+                margin-right: 5.88%;
+                border: 1px solid black;
+                float: left;
+            }
+            
+            .first-line .center {
+                width: 52.94%;
+                height: 100%;
+                margin-right: 5.88%;
+                border: 1px solid black;
+                float: left;
+            }
+            
+            .first-line .right {
+                width: 17.06%;
+                height: 100%;
+                border: 1px solid black;
+                float: left;
+            }
+            
+            .second-line {
+                width: 70.83%;
+                height: 46.875%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5%;
+            }
+            
+            .second-line .left {
+                width: 17.06%;
+                height: 100%;
+                margin-right: 5.88%;
+                border: 1px solid black;
+                float: left;
+            }
+            
+            .second-line .center {
+                width: 52.94%;
+                height: 100%;
+                margin-right: 5.88%;
+                border: 1px solid black;
+                float: left;
+            }
+            
+            .second-line .right {
+                width: 17.06%;
+                height: 100%;
+                border: 1px solid black;
+                float: left;
+            }
+            
+            .touch {
+                background-color: #ffff00;
+            }
+            
+        </style>
+        <script src='src/jquery.js'></script>
+        <script src='src/config.test.js'></script>
+        <script src='src/script.js'></script>
+    </head>
+    <body style="border: 0px solid black;">
+        <input type="hidden" id="type-select" value="drum" />
+        <div class="first-line">
+            <div class="left" ontouchstart="$(this).addClass('touch');" ontouchend="$(this).removeClass('touch');"></div>
+            <div class="center" ontouchstart="$(this).addClass('touch');" ontouchend="$(this).removeClass('touch');"></div>
+            <div class="right" ontouchstart="$(this).addClass('touch');" ontouchend="$(this).removeClass('touch');"></div>
+        </div>
+        <div class="second-line">
+            <div class="left" ontouchstart="$(this).addClass('touch');" ontouchend="$(this).removeClass('touch');"></div>
+            <div class="center" ontouchstart="$(this).addClass('touch');" ontouchend="$(this).removeClass('touch');"></div>
+            <div class="right" ontouchstart="$(this).addClass('touch');" ontouchend="$(this).removeClass('touch');"></div>
+        <div>
+        <script>
+            
+        </script>
+    </body>
+</html>
