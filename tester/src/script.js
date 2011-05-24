@@ -1,23 +1,54 @@
-﻿var keyMap = {
-    65: {value: 1, name: 'Do', keyboard: 'A'},
-    87: {value: 2, name: 'Du', keyboard: 'W'},
-    83: {value: 3, name: 'Re', keyboard: 'S'},
-    69: {value: 4, name: 'Me', keyboard: 'E'},
-    68: {value: 5, name: 'Mi', keyboard: 'D'},
-    70: {value: 6, name: 'Fa', keyboard: 'F'},
-    84: {value: 7, name: 'Fi', keyboard: 'T'},
-    71: {value: 8, name: 'So', keyboard: 'G'},
-    89: {value: 9, name: 'Su', keyboard: 'Y'},
-    72: {value: 10, name: 'La', keyboard: 'H'},
-    85: {value: 11, name: 'Ti', keyboard: 'U'},
-    74: {value: 12, name: 'Si', keyboard: 'J'}
+﻿var KEY_MAP = {
+    49: {value: 23, name: 'la#', level: 1, keyboard: '1'},
+    51: {value: 26, name: 'do#', level: 2, keyboard: '3'},
+    52: {value: 28, name: 're#', level: 2, keyboard: '4'},
+    54: {value: 31, name: 'fa#', level: 2, keyboard: '6'},
+    55: {value: 33, name: 'so#', level: 2, keyboard: '7'},
+    56: {value: 35, name: 'la#', level: 2, keyboard: '8'},
+    48: {value: 38, name: 'do#', level: 3, keyboard: '0'},
+    
+    81: {value: 24, name: 'si', level: 1, keyboard: 'Q'},
+    87: {value: 25, name: 'do', level: 2, keyboard: 'W'},
+    69: {value: 27, name: 're', level: 2, keyboard: 'E'},
+    82: {value: 29, name: 'mi', level: 2, keyboard: 'R'},
+    84: {value: 30, name: 'fa', level: 2, keyboard: 'T'},
+    89: {value: 32, name: 'so', level: 2, keyboard: 'Y'},
+    85: {value: 34, name: 'la', level: 2, keyboard: 'U'},
+    73: {value: 36, name: 'si', level: 2, keyboard: 'I'},
+    79: {value: 37, name: 'do', level: 3, keyboard: 'O'},
+    80: {value: 39, name: 're', level: 3, keyboard: 'P'},
+    
+    65: {value: 11, name: 'la#', level: 0, keyboard: 'A'},
+    68: {value: 14, name: 'do#', level: 1, keyboard: 'D'},
+    70: {value: 16, name: 're#', level: 1, keyboard: 'F'},
+    72: {value: 19, name: 'fa#', level: 1, keyboard: 'H'},
+    74: {value: 21, name: 'so#', level: 1, keyboard: 'J'},
+    75: {value: 23, name: 'la#', level: 1, keyboard: 'K'},
+    186: {value: 26, name: 'do#', level: 2, keyboard: ';'},
+    
+    90: {value: 12, name: 'si', level: 0, keyboard: 'Z'},
+    88: {value: 13, name: 'do', level: 1, keyboard: 'X'},
+    67: {value: 15, name: 're', level: 1, keyboard: 'C'},
+    86: {value: 17, name: 'mi', level: 1, keyboard: 'V'},
+    66: {value: 18, name: 'fa', level: 1, keyboard: 'B'},
+    78: {value: 20, name: 'so', level: 1, keyboard: 'N'},
+    77: {value: 22, name: 'la', level: 1, keyboard: 'M'},
+    188: {value: 24, name: 'si', level: 1, keyboard: ','},
+    190: {value: 25, name: 'do', level: 2, keyboard: '.'},
+    191: {value: 27, name: 're', level: 2, keyboard: '/'}
 };
-var stepMap = {
-    1: {name: '低音', keyboard: 'ALT + '},
-    2: {name: '正常音', keyboard: ''},
-    3: {name: '高音', keyboard: 'SHIFT + '},
-    4: {name: '超高音', keyboard: 'CTRL + '}
+
+var BASE_MAP = {
+    189: {step: 1, name: '+8', keyboard: '-'},
+    219: {step: 0, name: 'reset', keyboard: '['},
+    222: {step: -1, name: '-8', keyboard: '\''}
 };
+
+var MIN_VALUE = -48;
+var MAX_VALUE = 96;
+
+var baseLevel = 0;
+
 
 function init() {
     $(window).keydown(keydown);
@@ -28,41 +59,92 @@ function keydown(evt) {
     var shift = evt.shiftKey;
     var ctrl = evt.ctrlKey;
     var alt = evt.altKey;
-    var key = keyMap[code];
-    var step = 2;
+
+    var key = KEY_MAP[code];
+    var base = BASE_MAP[code];
+
 
     if (key) {
-        $('#key-' + key.value).focus();
         evt.preventDefault();
+
+        $('#key-' + key.keyboard).focus();
+        
+        var currentLevel = 0;
         if (shift) {
-            step = 3;
+            currentLevel--;
         }
         else if (ctrl) {
-            step = 4;
+            currentLevel++;
         }
-        else if (alt) {
-            step = 1;
+
+        var extraLevel = baseLevel + currentLevel;
+        var level = key.level + extraLevel;
+        var result = key.value + extraLevel * 12;
+        
+        if (result > MAX_VALUE) {
+            result = MAX_VALUE;
         }
-        play(key, step);
+        else if (result < MIN_VALUE) {
+            result = MIN_VALUE;
+        }
+        
+        var type = $('#type-select').val();
+        var path = type + '/' + result + '.mp3';
+        
+        play(path);
+        show({name: key.name,
+                value: key.value,
+                keyboard: key.keyboard,
+                result: result,
+                path: path,
+                type: type,
+                level: level,
+                base: baseLevel,
+                current: currentLevel});
+    }
+    
+    if (base) {
+        evt.preventDefault();
+
+        if (base.step == 0) {
+            baseLevel = 0;
+        }
+        else if (base.step == 1) {
+            baseLevel++;
+        }
+        else if (base.step == -1) {
+            baseLevel--;
+        }
+        show({base: baseLevel});
     }
 }
 
-function play(key, step) {
-    var result = key.value + (step - 1) * 12;
-    var type = $('#type-select').val();
-    var path = type + '/' + result + '.mp3';
-
+function play(path) {
     var audio = new Audio;
     audio.src = path;
     audio.play();
-
-    showCurrent(key, stepMap[step], path);
 }
 
-function showCurrent(key, step, path) {
-    $('#current-key').text(step.keyboard + key.keyboard);
-    $('#current-tone').text(step.name + key.name);
-    $('#current-path').text(path);
+function show(config) {
+    if (!config.name) {
+        $('#base-step').text(config.base);
+        return;
+    }
+
+    var finalFunc = '';
+    var finalKey = config.name + '(' + config.keyboard + ')';
+    if (config.current == 1) {
+        finalFunc = ' + 8(CTRL)';
+    }
+    else if (config.current == -1) {
+        finalFunc = ' - 8(SHIFT)';
+    }
+
+    $('#base-step').text(config.base);
+    $('#current-key').text(finalKey + finalFunc);
+    $('#current-step').text(config.level);
+    $('#current-tone').text(config.type + ' -> ' + config.name + '*' + config.level);
+    $('#current-path').text(config.path);
 }
 
 $(init);
