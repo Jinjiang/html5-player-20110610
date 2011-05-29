@@ -23,8 +23,11 @@ function init() {
             console.log(evt);
             ws = null;
         };
+        $(window).keydown(keydown);
     }
-    $(window).keydown(keydown);
+    else {
+        alert('Sorry! Web Socket not supported!');
+    }
 }
 
 function keydown(evt) {
