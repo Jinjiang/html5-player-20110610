@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>放音</title>
+<link rel="stylesheet" href="src/style.player.css" />
+<script src="src/jquery.js"></script>
+<script src="src/records.js"></script>
+<script src="src/script.player.js"></script>
+</head>
+
+<body>
+<h1>
+    放音
+</h1>
+<table>
+<tr>
+    <td>
+        <section>
+        <h2>控制</h2>
+        <p>
+            <button onclick="playAll()">连续播放所有 (回车键)</button>
+            <button onclick="playNext()">播放下一个音 (字母|数字|空格键)</button>
+        </p>
+        </section>
+        <section>
+        <h2>当前音</h2>
+        <ul>
+            <li>乐器: <span id="current-type"></span></li>
+            <li>音高: <span id="current-result"></span></li>
+            <li>文件: <span id="current-path"></span></li>
+        </ul>
+        </section>
+    </td>
+    <td>
+        <section>
+        <h2>录音结果</h2>
+        <ul id="record-box" class="box">
+        </ul>
+        </section>
+    </td>
+</tr>
+</table>
+</body>
+
+</html>

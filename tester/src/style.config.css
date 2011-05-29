@@ -1,0 +1,122 @@
+﻿body, input, select, button {
+    font-family: Consolas;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+table {
+    width: 100%;
+}
+td {
+    vertical-align: top;
+}
+
+input {
+    width: 100px;
+    text-align: center;
+}
+
+.box {
+    height: 400px;
+    overflow: auto;
+    border: 1px black solid;
+}
+
+h1 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+h2 {
+    cursor: pointer;
+}
+h2:hover {
+    text-shadow: 2px 2px 3px silver;
+}
+
+section {
+    border-top: 1px black solid;
+    padding: 10px 0;
+    margin: 0 10px;
+}
+section.collapsed > * {
+    display: none;
+}
+section.collapsed > h2 {
+    display: block;
+}
+
+
+
+
+#keyboard-map,
+#keyboard-ctrl {
+    list-style: none;
+}
+#keyboard-map > li {
+    cursor: default;
+}
+#keyboard-map > li:hover {
+    list-style: square;
+}
+#keyboard-map > li.current {
+    list-style: disc;
+}
+#keyboard-map,
+#keyboard-map button,
+#keyboard-map input {
+    color: silver;
+}
+#keyboard-map > li.current,
+#keyboard-map > li.current button,
+#keyboard-map > li.current input {
+    color: gray;
+}
+#keyboard-map > li:hover,
+#keyboard-map > li:hover button,
+#keyboard-map > li:hover input {
+    color: black;
+}
+
+
+
+
+#piano-map {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 480px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    list-style: none;
+    outline: 1px black solid;
+}
+#piano-map > li {
+    height: 40px;
+    margin: 0;
+    outline: 1px black solid;
+    line-height: 40px;
+    padding: 0;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#piano-map > li:hover {
+    background: silver;
+    color: black;
+}
+#piano-map > li:active {
+    line-height: 42px;
+    padding-left: 11px;
+}
+#piano-map > .white-key {
+    background: white;
+}
+#piano-map > .black-key {
+    position: absolute;
+    right: 0;
+    width: 110px;
+    background: black;
+    color: white;
+    outline-color: white;
+    -webkit-box-sizing: border-box;
+}

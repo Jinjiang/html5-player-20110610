@@ -1,0 +1,1 @@
+var records=[{type: "piano", result: 13, time: 0},{type: "piano", result: 15, time: 299},{type: "piano", result: 17, time: 532},{type: "piano", result: 18, time: 810},{type: "piano", result: 20, time: 1098},{type: "piano", result: 18, time: 1401},{type: "piano", result: 17, time: 1649},{type: "piano", result: 15, time: 1926},{type: "piano", result: 13, time: 2232}];

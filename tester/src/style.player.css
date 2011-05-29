@@ -1,0 +1,42 @@
+﻿body, select, button {
+    font-family: Consolas;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+table {
+    width: 100%;
+}
+td {
+    vertical-align: top;
+    width: 50%;
+}
+
+.box {
+    height: 400px;
+    overflow: auto;
+    border: 1px black solid;
+}
+
+h1 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+h2 {
+    cursor: pointer;
+}
+h2:hover {
+    text-shadow: 2px 2px 3px silver;
+}
+
+section {
+    border-top: 1px black solid;
+    padding: 10px 0;
+    margin: 0 10px;
+}
+section.collapsed > * {
+    display: none;
+}
+section.collapsed > h2 {
+    display: block;
+}

@@ -3,57 +3,78 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Demo</title>
-<link rel="stylesheet" href="src/style.css" />
+<title>录音</title>
+<link rel="stylesheet" href="src/style.recorder.css" />
 <script src="src/jquery.js"></script>
-<script src="src/script.js"></script>
+<script src="src/script.recorder.js"></script>
 </head>
 
 <body>
-<h1>Demo</h1>
-<h2>乐器类型选择</h2>
-<p>
+<h1>
+    录音
     <select id="type-select">
         <option value="piano">钢琴</option>
         <option value="guitar">吉他</option>
         <option value="drum">鼓</option>
         <option value="xylophone">木琴</option>
     </select>
-</p>
-<!--input type="hidden" id="type-select" value="piano" /-->
-<h2>键位图</h2>
-<p>
-    <img alt="Keyboard Map" src="src/keyboard-map.png" />
-</p>
-<h2>播放状态</h2>
-<ul>
-    <li>默认音阶: <span id="base-step"></span></li>
-    <li>当前组合键: <span id="current-key"></span></li>
-    <li>播放音阶: <span id="current-step"></span></li>
-    <li>播放发音: <span id="current-tone"></span></li>
-    <li>文件路径: <span id="current-path"></span></li>
-</ul>
-<h2>提示:</h2>
-<ul>
-    <li>W = 中央C</li>
-	<li>X = 中央C - 8</li>
-</ul>
-<ul>
-	<li>K = 1 = la#</li>
-	<li>, = Q = si</li>
-	<li>. = W = do</li>
-	<li>/ = E = re</li>
-	<li>; = 3 = do#</li>
-</ul>
-<ul>
-	<li>ctrl + key = +8度音</li>
-	<li>shift + key = -8度音</li>
-</ul>
-<ul>
-	<li>- = 固定+8</li>
-	<li>[ = 还原</li>
-	<li>&#39; = 固定-8</li>
-</ul>
+</h1>
+<table>
+<tr>
+    <td>
+        <!--section class="collapsed">
+        <h2>乐器类型选择</h2>
+        <input type="hidden" id="type-select" value="piano" />
+        </section-->
+        <section class="collapsed">
+        <h2>键位图</h2>
+        <p>
+            <img alt="Keyboard Map" src="src/keyboard-map.png" />
+        </p>
+        </section>
+        <section>
+        <h2>播放状态</h2>
+        <ul>
+            <li>默认音阶: <span id="base-step"></span></li>
+            <li>当前组合键: <span id="current-key"></span></li>
+            <li>播放音阶: <span id="current-step"></span></li>
+            <li>播放发音: <span id="current-tone"></span></li>
+            <li>文件路径: <span id="current-path"></span></li>
+        </ul>
+        </section>
+        <section class="collapsed">
+        <h2>提示</h2>
+        <ul>
+            <li>W = 中央C</li>
+        	<li>X = 中央C - 8</li>
+        </ul>
+        <ul>
+        	<li>K = 1 = la#</li>
+        	<li>, = Q = si</li>
+        	<li>. = W = do</li>
+        	<li>/ = E = re</li>
+        	<li>; = 3 = do#</li>
+        </ul>
+        <ul>
+        	<li>ctrl + key = +8度音</li>
+        	<li>shift + key = -8度音</li>
+        </ul>
+        <ul>
+        	<li>- = 固定+8</li>
+        	<li>[ = 还原</li>
+        	<li>&#39; = 固定-8</li>
+        </ul>
+        </section>
+    </td>
+    <td>
+        <section>
+        <h2>录音结果 <sub><a id="link-download" style="display: none;" href="#">下载(右键另存为)</a></sub></h2>
+        <ul id="record-box" class="box">
+        </ul>
+        </section>
+    </td>
+</tr>
+</table>
 </body>
 
 </html>
