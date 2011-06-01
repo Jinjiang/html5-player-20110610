@@ -38,6 +38,7 @@ if (!window.KEY_MAP) {
 
 var audioMap = {};
 var ws;
+var host = 'localhost';
 var type = 'piano';
 
 
@@ -47,7 +48,7 @@ function init() {
     showKeyList();
     $(window).keydown(keydown);
     if (window.WebSocket) {
-        ws = new WebSocket('ws://192.168.1.56:8080/');
+        ws = new WebSocket('ws://' + host + ':8080/');
         ws.onopen = function () {
             ws.send('client:piano');
         };

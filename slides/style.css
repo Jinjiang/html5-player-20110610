@@ -205,12 +205,12 @@ h1, h2 {
     list-style: none;
     background: rgba(0,0,0,0.5);
     -webkit-transition: all 1s;
+    text-shadow: 3px 3px 10px white;
 }
 #content-list > li {
     padding: 0;
     margin: 0;
     margin: 0 160px 10px;
-    text-shadow: 3px 3px 10px white;
 }
 
 
@@ -219,6 +219,7 @@ h1, h2 {
     top: 100px;
     list-style: none;
     font-style: italic;
+    text-shadow: 3px 3px 10px white;
 }
 #cloud-list > li {
     position: relative;
@@ -277,7 +278,7 @@ h1, h2 {
     right: -400px;
 }
 #cloud-list.flying > #cloud-canvas {
-    font-size: 96px;
+    font-size: 80px;
     left: 250px;
 }
 #cloud-list.flying > #cloud-svg {

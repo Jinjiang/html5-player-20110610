@@ -1,7 +1,8 @@
 ﻿var type = 'piano';
 
 if (window.WebSocket) {
-    var ws2 = new WebSocket('ws://localhost:8080/');
+    var host = 'localhost';
+    var ws2 = new WebSocket('ws://' + host + ':8080/');
 
     function play(type, value) {
         var path = 'other/' + type + value + '.mp3';

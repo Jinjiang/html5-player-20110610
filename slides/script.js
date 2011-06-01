@@ -157,6 +157,7 @@ function hideCloud() {
 /* INIT */
 $(function () {
     resize();
+    socket();
     $(window).keydown(keydown);
     $(window).bind('resize', resize);
 });
@@ -165,6 +166,35 @@ $(function () {
 
 
 /* EVENTS */
+function socket() {
+    var DEVICE_MAP = {
+        'piano': 1,
+        'piano2': 2,
+        'drum': 3,
+        'cymbals': 4
+    };
+    var ws;
+    var host = 'localhost';
+    
+    if (window.WebSocket) {
+        ws = new WebSocket('ws://' + host + ':8080/');
+        ws.onopen = function () {
+            ws.send('player:slides');
+        };
+        ws.onmessage = function (evt) {
+            var data = evt.data.match(/(\w+)\:(\w+)/);
+    
+            if (data) {
+                var type = data[1];
+                var value = data[2];
+                
+                var index = DEVICE_MAP[type];
+                hitDevice('#device-' + index);
+            }
+        };
+    }
+}
+
 function resize() {
     var height = $(window).height();
     $('#stage').css('marginTop', Math.ceil((height - 768) / 2) + 'px');
