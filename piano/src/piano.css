@@ -1,0 +1,79 @@
+﻿body, input, select, button {
+    font-family: Consolas;
+    font-size: 24px;
+}
+input, select {
+    width: 120px;
+}
+table {
+    margin-bottom: 20px;
+}
+th {
+    text-align: right;
+}
+
+
+ul {
+    list-style: none;
+    width: 1100px;
+    height: 400px;
+    margin: 100px auto;
+    position: relative;
+}
+li {
+    padding: 0;
+    margin: 0;
+    width: 100px;
+    height: 100px;
+    outline: 1px black solid;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    font-size: 36px;
+}
+li.enabled {
+    background: gray;
+    color: white;
+}
+li.enabled:target {
+    color: black;
+    font-weight: bold;
+}
+
+
+#key-0, #key-1, #key-2, #key-3, #key-4,
+#key-5, #key-6, #key-7, #key-8, #key-9 {top: 0px;}
+#key-Q, #key-W, #key-E, #key-R, #key-T,
+#key-Y, #key-U, #key-I, #key-O, #key-P {top: 100px;}
+#key-A, #key-S, #key-D, #key-F, #key-G,
+#key-H, #key-J, #key-K, #key-L, #key-\; {top: 200px;}
+#key-Z, #key-X, #key-C, #key-V, #key-B,
+#key-N, #key-M {top: 300px;}
+
+#key-1 {left: 0px;}
+    #key-Q {left: 50px;}
+#key-2, #key-A {left: 100px;}
+    #key-W, #key-Z {left: 150px;}
+#key-3, #key-S {left: 200px;}
+    #key-E, #key-X {left: 250px;}
+#key-4, #key-D {left: 300px;}
+    #key-R, #key-C {left: 350px;}
+#key-5, #key-F {left: 400px;}
+    #key-T, #key-V {left: 450px;}
+#key-6, #key-G {left: 500px;}
+    #key-Y, #key-B {left: 550px;}
+#key-7, #key-H {left: 600px;}
+    #key-U, #key-N {left: 650px;}
+#key-8, #key-J {left: 700px;}
+    #key-I, #key-M {left: 750px;}
+#key-9, #key-K {left: 800px;}
+    #key-O {left: 850px;}
+#key-0, #key-L {left: 900px;}
+    #key-P {left: 950px;}
+        #key-\; {left: 1000px;}
+
+
+#key-config {
+    display: none;
+    padding: 40px;
+}

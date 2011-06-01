@@ -1,0 +1,290 @@
+﻿@media screen {
+    @font-face {
+        font-family: 'Cabin Sketch';
+        font-style: normal;
+        font-weight: bold;
+        src: local('CabinSketch Bold'), local('CabinSketch-Bold'), url('fonts/CabinSketch-Bold.woff') format('woff');
+    }
+}
+
+@media screen {
+    @font-face {
+        font-family: 'Cuprum';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Cuprum'), url('fonts/Cuprum.woff') format('woff');
+    }
+}
+
+
+
+
+body {
+    font-family: Cuprum;
+    font-size: 48px;
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+
+
+#stage {
+    position: relative;
+    width: 1024px;
+    height: 768px;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 128px;
+    font-family: 'Cabin Sketch';
+}
+
+
+.layer {
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    left: 0;
+}
+.layer > h1,
+.layer > h2,
+.layer > img,
+.layer > div,
+.layer > ol,
+.layer > ol > li {
+    display: none; 
+}
+
+
+#slogen-layer {
+    z-index: 50;
+}
+#logo-layer,
+#title-layer {
+    z-index: 40;
+}
+#cloud-layer {
+    z-index: 30;
+}
+#content-layer {
+    z-index: 20;
+}
+#device-layer {
+    z-index: 10;
+}
+
+
+#logo-layer,
+#slogen-layer {
+    line-height: 768px;
+    text-align: center;
+}
+#logo-layer img {
+    vertical-align: middle;
+    width: 250px;
+    opacity: 0;
+    -webkit-transition: all 1s;
+}
+#slogen-layer h1,
+#slogen-layer h2 {
+    font-weight: normal;
+    opacity: 0;
+    -webkit-transition: all 1s;
+    background: rgba(0,0,0,0.5);
+}
+
+
+#title-layer h2 {
+    position: absolute;
+    top: 300px;
+    width: 1024px;
+    height: 168px;
+    line-height: 168px;
+    text-align: center;
+    opacity: 0;
+    background: -webkit-gradient(linear, 0% 0, 0% 100%,
+            from(black), to(black), color-stop(50%, rgba(196,196,196,0.8)));
+    -webkit-transition: all 1s;
+}
+#title-layer h2.on-top {
+    background: transparent;
+    top: 100px;
+    width: 512px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 80px;
+}
+
+
+#device-layer {
+    -webkit-transition: all 1s;
+}
+#device-layer > div {
+    position: absolute;
+    -webkit-transition: all 1s;
+    display: none;
+    opacity: 0;
+    top: 300px;
+}
+#device-layer > div > img {
+    display: block;
+    margin: auto;
+    -webkit-transition: width 1s, -webkit-transform 0.1s;
+}
+#device-layer .instrument {
+    width: 240px;
+    -webkit-transform: scale(1);
+}
+#device-layer .instrument.hit {
+    -webkit-transform: scale(1.2);
+    -webkit-transition: width 1s, -webkit-transform 0.5s;
+}
+#device-layer .connection {
+    width: 100px;
+    opacity: 0;
+}
+#device-layer .client {
+    width: 200px;
+    opacity: 0;
+}
+#device-layer > div.list .instrument {
+    width: 120px;
+}
+#device-layer > div.list .connection {
+    width: 50px;
+    opacity: 1;
+}
+#device-layer > div.list .client {
+    width: 100px;
+    opacity: 1;
+}
+
+
+#device-layer > div.single {
+    left: 392px;
+}
+#device-layer > div.double-1 {
+    left: 242px;
+}
+#device-layer > div.double-2 {
+    left: 542px;
+}
+
+
+#device-layer .list-1 {
+    left: 142px;
+}
+#device-layer .list-2 {
+    left: 342px;
+}
+#device-layer .list-3 {
+    left: 562px;
+}
+#device-layer .list-4 {
+    left: 782px;
+}
+
+
+#content-list {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    width: 1024px;
+    height: 400px;
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: rgba(0,0,0,0.5);
+    -webkit-transition: all 1s;
+}
+#content-list > li {
+    padding: 0;
+    margin: 0;
+    margin: 0 160px 10px;
+    text-shadow: 3px 3px 10px white;
+}
+
+
+#cloud-list {
+    position: absolute;
+    top: 100px;
+    list-style: none;
+    font-style: italic;
+}
+#cloud-list > li {
+    position: relative;
+    -webkit-transition: all 1s;
+    padding: 0 10px;
+    margin: 0;
+}
+#cloud-list > li.ltr {
+    text-align: right;
+    right: 300px;
+}
+#cloud-list > li.rtl {
+    text-align: left;
+    left: 1100px;
+}
+#cloud-list.flying > li.ltr {
+    right: -600px;
+}
+#cloud-list.flying > li.rtl {
+    left: 100px;
+}
+#cloud-list.final > li.ltr {
+    right: -1000px;
+}
+#cloud-list.final > li.rtl {
+    left: -300px;
+}
+
+
+#cloud-list.flying > #cloud-dnd {
+    font-size: 48px;
+    right: -300px;
+}
+#cloud-list.flying > #cloud-file {
+    font-size: 36px;
+    left: 200px;
+}
+#cloud-list.flying > #cloud-worker {
+    font-size: 40px;
+    right: -500px;
+}
+#cloud-list.flying > #cloud-geo {
+    font-size: 32px;
+    left: 150px;
+}
+#cloud-list.flying > #cloud-offline {
+    font-size: 30px;
+    right: -550px;
+}
+#cloud-list.flying > #cloud-storage {
+    font-size: 64px;
+    left: 100px;
+}
+#cloud-list.flying > #cloud-note {
+    font-size: 48px;
+    right: -400px;
+}
+#cloud-list.flying > #cloud-canvas {
+    font-size: 96px;
+    left: 250px;
+}
+#cloud-list.flying > #cloud-svg {
+    font-size: 36px;
+    right: -450px;
+}
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Piano</title>
+<link rel="stylesheet" href="src/piano.css" />
+<script src="src/jquery.js"></script>
+<script src="src/jquery.blockUI.js"></script>
+<script src="src/config.js"></script>
+</head>
+
+<body>
+
+<button id="btn-export" style="position: absolute; top: 40px; left: 40px;">Export Current Config...</button>
+
+<ul id="key-list"></ul>
+
+<div id="key-config">
+    <table>
+    <tr>
+        <th>Step:</th>
+        <td><select id="step-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected="selected">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select></td>
+    </tr>
+    <tr>
+        <th>Tone:</th>
+        <td><select id="tone-select">
+            <option value="0" selected="selected">(empty)</option>
+            <option value="1">C</option>
+            <option value="2">D</option>
+            <option value="3">E</option>
+            <option value="4">F</option>
+            <option value="5">G</option>
+            <option value="6">A</option>
+            <option value="7">B</option>
+            <option value="a">C#</option>
+            <option value="b">D#</option>
+            <option value="c">F#</option>
+            <option value="d">G#</option>
+            <option value="e">A#</option>
+        </select></td>
+    </tr>
+    </table>
+    <button id="btn-save">Save</button>
+        <button id="btn-cancel">Cancel</button>
+</div>
+
+</body>
+
+</html>
