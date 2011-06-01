@@ -1,8 +1,8 @@
 ﻿var type = 'piano';
 
 if (window.WebSocket) {
-    var host = 'localhost';
-    var ws2 = new WebSocket('ws://' + host + ':8080/');
+    var host2 = 'localhost';
+    var ws2 = new WebSocket('ws://' + host2 + ':8080/');
 
     function play(type, value) {
         var path = 'other/' + type + value + '.mp3';
@@ -43,16 +43,13 @@ if (window.WebSocket) {
             if (type == 'drum') {
                 if (value == 1) {
                     play('drum', 1);
-                    ws.send('drum:1');
                 }
                 else if (value = 2) {
                     play('drum', 2);
-                    ws.send('drum:2');
                 }
             }
             else if (type == 'cymbals') {
                 play('cymbals', 1);
-                ws.send('cymbals:1');
             }
         }
     };

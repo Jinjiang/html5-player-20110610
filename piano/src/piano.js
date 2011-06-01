@@ -38,7 +38,7 @@ if (!window.KEY_MAP) {
 
 var audioMap = {};
 var ws;
-var host = 'localhost';
+var host = '192.168.1.56'; // 'localhost';
 var type = 'piano';
 
 
