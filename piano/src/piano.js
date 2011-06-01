@@ -37,6 +37,8 @@ if (!window.KEY_MAP) {
 
 
 var audioMap = {};
+var ws;
+var type = 'piano';
 
 
 
@@ -44,6 +46,12 @@ var audioMap = {};
 function init() {
     showKeyList();
     $(window).keydown(keydown);
+    if (window.WebSocket) {
+        ws = new WebSocket('ws://192.168.1.56:8080/');
+        ws.onopen = function () {
+            ws.send('client:piano');
+        };
+    }
 }
 
 
@@ -84,6 +92,10 @@ function keydown(event) {
             }
         }
         res.list[res.current].play();
+        
+        if (ws && ws.send) {
+            ws.send(type + ':1');
+        }
     }
 
     function show(key) {

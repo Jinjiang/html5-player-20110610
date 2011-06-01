@@ -1,0 +1,1 @@
+var KEY_MAP = {"S":{"step":"3","value":"1"},"D":{"step":"3","value":"2"},"F":{"step":"3","value":"3"},"J":{"step":"2","value":"5"},"K":{"step":"2","value":"6"},"L":{"step":"2","value":"7"}};

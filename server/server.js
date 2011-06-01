@@ -1,9 +1,9 @@
 ﻿var sys = require("sys");
 var ws = require('./lib/ws/server');
 
-var server = ws.createServer({debug: false});
+var server = ws.createServer({debug: true});
 
-var playerMap = {};
+var playerMap; // = {};
 
 server.addListener('connection', function (connection) {
 
@@ -47,7 +47,8 @@ function initMessage(data) {
         console.log('ADDED CLIENT:  ' + data.content, this.id);
         break;
     case 'player':
-        playerMap[data.content] = this;
+        // playerMap[data.content] = this;
+        playerMap = this;
         this.removeListener('message', initMessage);
         this.send('connected:' + this.id);
         console.log('ADDED PLAYER:  ' + data.content, this.id);
@@ -65,7 +66,7 @@ function clientMessage(data) {
         return;
     }
 
-    var player = playerMap[data.type];
+    var player = playerMap; // [data.type];
     if (player) {
         console.log('PLAY:          ' + data.type, data.content);
         player.send(data.type + ':' + data.content);
