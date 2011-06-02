@@ -20,7 +20,7 @@ if (window.WebSocket) {
         }
         else {
             res.current++;
-            if (res.current >= 4) {
+            if (res.current >= 8) {
                 res.current = 0;
             }
         }

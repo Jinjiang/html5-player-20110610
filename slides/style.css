@@ -229,7 +229,7 @@ h1, h2 {
 }
 #cloud-list > li.ltr {
     text-align: right;
-    right: 300px;
+    right: 350px;
 }
 #cloud-list > li.rtl {
     text-align: left;
@@ -245,7 +245,7 @@ h1, h2 {
     right: -1000px;
 }
 #cloud-list.final > li.rtl {
-    left: -300px;
+    left: -350px;
 }
 
 
