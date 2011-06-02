@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" 
+  content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <script src='drum/src/jquery.js'></script>
+    </head>
+    <body style="">
+        <div id="test"></div>
+        <script>
+            if (window.DeviceOrientationEvent) {
+                window.addEventListener("deviceorientation", function (event) {
+                    var a = Math.floor(event.alpha * 1000) / 1000;
+                    var b = Math.floor(event.beta * 1000) / 1000;
+                    var c = Math.floor(event.gamma * 1000) / 1000;
+                    
+                    var s = "";
+                    
+                    for (var p in event) {
+                        s += p + '<br />';
+                    }
+                    
+                    //$('#test').html(a + '<br />' + b + '<br />' + c + '<br />');
+                    //$('#test').html(s);
+                    
+                    
+                }, true);
+            }
+            
+            if (window.DeviceMotionEvent) {
+                window.addEventListener('devicemotion', function (event) {
+                    var s = "";
+                    
+                    x = Math.floor(event.acceleration.x * 1000);
+                    y = Math.floor(event.acceleration.y * 1000);
+                    z = Math.floor(event.acceleration.z * 1000);
+                }, true);
+            } else {
+                window.addEventListener("MozOrientation", function (event) {
+                    $('#test').html([orientation.x * 50, orientation.y * 50]);
+                }, true);
+            }
+            
+            setInterval(function () {$('#test').html(x + '<br />' + y + '<br />' + z);}, 1000);
+        </script>
+    </body>
+</html>
