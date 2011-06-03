@@ -1,0 +1,35 @@
+[[HTML5 Player]]
+
+
+[DEVICES]
+-------------------------------
+5 parts for all:
+1. piano client for pc x2
+2. drum client for ipad
+3. cymbals client for ipod touch
+4. server by node.js
+5. slides
+
+[PAGES]
+-------------------------------
+http://192.168.1.56/
+http://192.168.1.57/
+Slides: slides/index.html
+Piano: piano/piano.sammy.html, piano/piano.zhuyao.html
+Drum: drum/drum.html
+Cymbals: cymbals/cymbals.html
+Server: node server/server.js
+
+[WORKFLOW]
+-------------------------------
+2 pianos(zhuyao & sammy)
+set one piano(zhuyao) as a mobile device server
+drum and cymbals connect to mobile device server to make sounds
+set slides as a view server to receive all device hittings
+
+[DEFAULT CONFIG]
+-------------------------------
+default gateway: 192.168.1.1
+default slides ip: 192.168.1.56
+default mobile server + piano(zhuyao) ip: 192.168.1.57
+
