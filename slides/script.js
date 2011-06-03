@@ -189,7 +189,7 @@ function socket() {
                 var value = data[2];
                 
                 var index = DEVICE_MAP[type];
-                hitDevice('#device-' + index);
+                hitDevice('device-' + index);
             }
         };
     }
