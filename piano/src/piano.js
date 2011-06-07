@@ -84,6 +84,7 @@ function keydown(event) {
             res.current = res.list.length;
             var audio = new Audio;
             audio.src = path;
+            audio.volume = 0.1;
             res.list.push(audio);
         }
         else {
@@ -94,7 +95,7 @@ function keydown(event) {
         }
         res.list[res.current].play();
         
-        if (ws && ws.send) {
+        if (ws && ws.readyState == 1) {
             ws.send(type + ':1');
         }
     }

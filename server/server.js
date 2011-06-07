@@ -1,7 +1,7 @@
-﻿var sys = require("sys");
+var sys = require("sys");
 var ws = require('./lib/ws/server');
 
-var server = ws.createServer({debug: true});
+var server = ws.createServer({debug: false});
 
 var playerMap; // = {};
 
@@ -68,7 +68,7 @@ function clientMessage(data) {
 
     var player = playerMap; // [data.type];
     if (player) {
-        console.log('PLAY:          ' + data.type, data.content);
+        console.log('PLAY:          ' + data.type, data.content, (new Date).getMilliseconds());
         player.send(data.type + ':' + data.content);
     }
 }

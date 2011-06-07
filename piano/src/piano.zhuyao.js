@@ -26,7 +26,7 @@ if (window.WebSocket) {
         }
         res.list[res.current].play();
         
-        if (ws && ws.send) {
+        if (ws && ws.readyState == 1) {
             ws.send(type + ':1');
         }
     }

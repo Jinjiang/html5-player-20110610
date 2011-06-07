@@ -38,7 +38,9 @@ function init() {
 
 
 function send(value) {
-    ws.send(type + ':' + value);
+    if (ws && ws.readyState == 1) {
+        ws.send(type + ':' + value);
+    }
 }
 function resize() {
     $('table').css('height', $(window).height() + 'px');
