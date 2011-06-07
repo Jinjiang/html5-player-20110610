@@ -16,6 +16,10 @@ table {
 td {
     width: 50%;
 }
+button {
+    font-size: 48px;
+    padding: 20px;
+}
 </style>
 <script src="src/jquery.js"></script>
 <script src="src/drum.js"></script>
@@ -29,6 +33,9 @@ td {
         <td ontouchstart="send(2); return false;" onclick="send(2)" bgcolor="gray"></td>
     </tr>
 </table>
+
+<button style="position: absolute; top: 0; left: 0;" ontouchstart="start(); return false;" onclick="start()">Start</button>
+<button style="position: absolute; top: 0; right: 0;" ontouchstart="end(); return false;" onclick="end()">End</button>
 
 </body>
 

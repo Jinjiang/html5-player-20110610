@@ -84,7 +84,7 @@ function keydown(event) {
             res.current = res.list.length;
             var audio = new Audio;
             audio.src = path;
-            audio.volume = 0.1;
+            audio.volume = 0.5;
             res.list.push(audio);
         }
         else {
