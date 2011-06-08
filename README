@@ -3,22 +3,25 @@
 
 [DEVICES]
 -------------------------------
-5 parts for all:
+7 parts for all:
 1. piano client for pc x2
 2. drum client for ipad
 3. cymbals client for ipod touch
-4. server by node.js
-5. slides
+4. drum and cymbals player for pc
+5. server by node.js which is used in 2 places: mobile and slides
+6. slides
+7. rhythm tester
 
 [PAGES]
 -------------------------------
 http://192.168.1.56/
-http://192.168.1.57/
 Slides: slides/index.html
-Piano: piano/piano.sammy.html, piano/piano.zhuyao.html
+Piano: piano/piano-sammy.html, piano/piano-zhuyao.html
 Drum: drum/drum.html
 Cymbals: cymbals/cymbals.html
+Mobile Player: mobile-server/mobile-server.html
 Server: node server/server.js
+Rhythm Tester: rhythm-tester/rhythm-tester.html
 
 [WORKFLOW]
 -------------------------------
