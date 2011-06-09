@@ -66,14 +66,6 @@ if (window.WebSocket) {
                 }
                 play('cymbals', 1);
             }
-            else if (type == 'loop') {
-                if (value == 1) {
-                    start();
-                }
-                else if (value == 0) {
-                    end();
-                }
-            }
         }
     };
 }
