@@ -217,6 +217,11 @@ function keydown(event) {
     else if (event.keyCode == 70) {
         hitDevice('device-4');
     }
+    else if (event.keyCode == 90) {
+        if (confirm('see wa band introduction?')) {
+            location = '../slides-extra/index.html';
+        }
+    }
 
 }
 

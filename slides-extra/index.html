@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>wa band introduction</title>
+<link rel="stylesheet" href="style.css" />
+<script src="jquery.js"></script>
+<script src="jquery.blockUI.js"></script>
+<script src="script.js"></script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <div id="hardware-list" class="layer hidden">
+        <h1>设备</h1>
+        <div id="hardware-56" class="item" offset="1">
+            <img src="images/notebook.png" />
+            <h4>Slides</h4>
+        </div>
+        <div id="hardware-57" class="item" offset="2">
+            <img src="images/notebook.png" />
+            <h4>Piano</h4>
+        </div>
+        <div id="hardware-58" class="item" offset="5">
+            <img src="images/notebook.png" />
+            <h4>Piano</h4>
+        </div>
+        <div id="hardware-59" class="item" offset="3">
+            <img src="images/pad.png" />
+            <h4>Drum</h4>
+        </div>
+        <div id="hardware-60" class="item" offset="6">
+            <img src="images/touch.png" />
+            <h4>Cymbals</h4>
+        </div>
+        <div id="device-56" class="item" offset="4">
+            <img src="images/wifi.png" />
+            <h4>Router</h4>
+        </div>
+    </div>
+    
+    <div id="product-list" class="layer hidden">
+        <h1>乐器</h1>
+        <div id="product-projector" class="item" offset="1">
+            <img src="images/projector.png" />
+            <h4>Notebook</h4>
+        </div>
+        <div id="product-piano" class="item" offset="2">
+            <img src="images/piano.png" />
+            <h4>Notebook</h4>
+        </div>
+        <div id="product-piano2" class="item" offset="5">
+            <img src="images/piano.png" />
+            <h4>Notebook</h4>
+        </div>
+        <div id="product-drum" class="item" offset="3">
+            <img src="images/drum.png" />
+            <h4>iPad</h4>
+        </div>
+        <div id="product-cymbals" class="item" offset="6">
+            <img src="images/cymbals.png" />
+            <h4>iPod Touch</h4>
+        </div>
+    </div>
+    
+    <div id="software-list" class="layer hidden">
+        <h1 style="margin-top: 600px;">软件</h1>
+        <div id="software-56" class="item" offset="1">
+            <img src="images/maxthon.png" />
+            <img src="images/node.js.png" />
+        </div>
+        <div id="software-57" class="item" offset="2">
+            <img src="images/chrome.png" />
+            <img src="images/chrome.png" />
+            <img src="images/node.js.png" />
+        </div>
+        <div id="software-58" class="item" offset="5">
+            <img src="images/chrome.png" />
+        </div>
+        <div id="software-59" class="item" offset="3">
+            <img src="images/safari.png" />
+        </div>
+        <div id="software-60" class="item" offset="6">
+            <img src="images/safari.png" />
+        </div>
+
+        <div id="input-piano" class="extra" type="input">
+            <img src="images/arrow-front.png" />
+            <label>piano:x</label>
+        </div>
+        <div id="input-piano2" class="extra" type="input">
+            <img src="images/arrow-front.png" />
+            <label>piano2:x</label>
+        </div>
+        <div id="input-drum" class="extra" type="input">
+            <img src="images/arrow-front.png" />
+            <label>drum:x</label>
+        </div>
+        <div id="input-cymbals" class="extra" type="input">
+            <img src="images/arrow-front.png" />
+            <label>cymbals:x</label>
+        </div>
+
+        <img id="output-projector" class="extra" type="output" src="images/projector.png" />
+        <img id="output-piano" class="extra" type="output" src="images/sound.png" />
+        <img id="output-mobile" class="extra" type="output" src="images/sound.png" />
+        <img id="output-piano2" class="extra" type="output" src="images/sound.png" />
+
+        <img id="final-1" class="extra" type="final" src="images/arrow-short.png" />
+        <img id="final-2" class="extra" type="final" src="images/arrow-mid.png" />
+        <img id="final-3" class="extra" type="final" src="images/arrow-long.png" />
+
+    </div>
+    
+    <div id="person-list" class="layer hidden">
+        <div id="person-lvyuang" class="item" offset="1" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-lvyuang.jpg" />
+            <h5>吕宇昂(战歌) - 傲游浏览器</h5>
+            <p><a target="_blank" href="http://weibo.com/1890086017">http://weibo.com/1890086017</a><br />
+                    精致在细节中体现</p>
+        </div>
+        <div id="person-zhuyao" class="item" offset="2" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-zhuyao.jpg" />
+            <h5>朱尧</h5>
+            <p>做事，做市，做势。</p>
+        </div>
+        <div id="person-sammy" class="item" offset="5" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-sammy.jpg" />
+            <h5>黄蔚瀚(Sammy)</h5>
+            <p><a target="_blank" href="http://weibo.com/iisii">http://weibo.com/iisii</a><br />
+                    I enjoy my life.</p>
+        </div>
+        <div id="person-tangzhu" class="item" offset="3" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-tangzhu.jpg" />
+            <h5>秀野堂主</h5>
+            <p>混合型老程序员</p>
+        </div>
+        <div id="person-haiquan" class="item" offset="6" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-haiquan.jpg" />
+            <h5>汤海泉 (Alonzo Tang) - 移动视界</h5>
+            <p><a target="_blank" href="http://www.mstorez.com/">http://www.mstorez.com/</a><br />
+                    Stay Hungry, Stay Foolish!</p>
+        </div>
+        <div id="person-jinjiang" class="item" offset="4" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-jinjiang.jpg" />
+            <h5>赵锦江(勾三股四) - 傲游浏览器</h5>
+            <p><a target="_blank" href="http://weibo.com/mx006">http://weibo.com/mx006</a><br />
+                    每一天都是一个新的开始</p>
+        </div>
+
+        <img id="role-mic" src="images/mic.png" class="extra" type="role" />
+        <div id="person-zhaoyilong" class="extra" type="person" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-zhaoyilong.jpg" />
+            <h5>赵义龙</h5>
+            <p></p>
+        </div>
+
+        <img id="role-master" src="images/master.png" class="extra" type="role" />
+        <div id="person-tianaina" class="extra" type="person" onclick="showPerson(this.innerHTML)">
+            <img src="images/person-tianaina.jpg" />
+            <h5>田爱娜</h5>
+            <p></p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

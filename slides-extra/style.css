@@ -1,0 +1,285 @@
+﻿body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: Consolas;
+    font-size: 32px;
+    overflow: hidden;
+}
+
+h4 {
+    margin: 0;
+    font-size: 32px;
+}
+
+#stage {
+    position: relative;
+    width: 1024px;
+    height: 768px;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+.layer {
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 1s;
+}
+.layer h1 {
+    margin-left: 100px;
+}
+
+.shown {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/***** HHH *****/
+.item {
+    position: absolute;
+    text-align: center;
+    width: 240px;
+    overflow: hidden;
+    z-index: 5;
+}
+.item[offset="1"],
+.item[offset="2"],
+.item[offset="3"] {
+    top: 100px;
+}
+.item[offset="4"],
+.item[offset="5"],
+.item[offset="6"] {
+    top: 400px;
+}
+.item[offset="1"],
+.item[offset="4"] {
+    left: 100px;
+}
+.item[offset="2"],
+.item[offset="5"] {
+    left: 400px;
+}
+.item[offset="3"],
+.item[offset="6"] {
+    left: 700px;
+}
+
+#product-list img {
+    width: 200px;
+    margin: 20px;
+}
+#product-list .item[offset="1"] img {
+    width: 240px;
+    margin: 0px;
+}
+#software-list .item {
+    border: 4px white solid;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    height: 220px;
+}
+#software-list .item img {
+    width: 120px;
+    border: 10px white solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#software-list .item[offset="2"] img {
+    width: 60px;
+    margin-bottom: 80px;
+}
+#software-list .item[offset="2"] img:last-child {
+    width: 120px;
+}
+
+
+
+
+/***** HHH *****/
+.layer .extra {
+    position: absolute;
+    z-index: 10;
+}
+.extra[type="output"] {
+    width: 120px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
+#output-projector {
+    left: 60px;
+    top: 20px;
+}
+#output-piano {
+    left: 360px;
+    top: 20px;
+}
+#output-mobile {
+    left: 560px;
+    top: 20px;
+}
+#output-piano2 {
+    left: 360px;
+    top: 620px;
+}
+
+
+
+/***** HHH *****/
+.extra[type="input"] {
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
+.extra[type="input"] img {
+    width: 120px;
+    display: block;
+    margin: auto;
+}
+.extra[type="input"] label {
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size: 24px;
+    text-shadow: 3px 3px 5px black;
+}
+#input-piano {
+    top: 220px;
+    left: 320px;
+    -webkit-transform: rotate(-45deg);
+}
+#input-piano2 {
+    top: 350px;
+    left: 300px;
+    -webkit-transform: rotate(45deg);
+}
+#input-drum {
+    top: 220px;
+    left: 620px;
+    -webkit-transform: rotate(-45deg);
+}
+#input-cymbals {
+    top: 370px;
+    left: 600px;
+    -webkit-transform: rotate(45deg);
+}
+
+
+
+/***** HHH *****/
+.extra[type="final"] {
+    z-index: 1;
+}
+#final-1 {
+    top: 256px;
+    left: 175px;
+    -webkit-transform: rotate(90deg);
+}
+#final-2 {
+    top: 220px;
+    left: 475px;
+    -webkit-transform: rotate(90deg);
+}
+#final-3 {
+    top: 245px;
+    left: 200px;
+    -webkit-transform: rotate(-20deg);
+}
+
+
+
+/***** HHH *****/
+#person-list {
+    z-index: 10;
+}
+#person-list .item {
+    -webkit-transform: translate(100px, 100px) scale(0.5);
+}
+#person-list .item[offset="1"],
+#person-list .item[offset="2"],
+#person-list .item[offset="3"] {
+    -webkit-transform: translate(100px, -50px) scale(0.5);
+}
+#person-list div h5,
+#person-list div p {
+    display: none;
+    font-size: 20px !important;
+}
+#person-list div img {
+    display: block;
+    margin: auto;
+    max-width: 240px;
+    max-height: 200px;
+    cursor: pointer;
+}
+
+
+
+/***** HHH *****/
+.extra[type="role"] {
+    background: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    border: 5px rgba(255,255,255,0.6) solid;
+    z-index: 40;
+}
+#role-master {
+    top: 280px;
+    left: 540px;
+}
+#role-mic {
+    top: 280px;
+    left: 240px;
+}
+.extra[type="person"] {
+    z-index: 50;
+}
+.extra[type="person"] img {
+    width: 100px;
+}
+#person-zhaoyilong {
+    top: 480px;
+    left: 425px;
+}
+#person-tianaina {
+    top: 445px;
+    left: 725px;
+}
+
+
+
+
+/***** HHH *****/
+.blockMsg {
+    border: 10px white solid;
+    border-radius: 10px;
+    text-align: center;
+}
+.blockMsg img {
+    max-width: 600px;
+    max-height: 400px;
+    margin: 20px auto;
+    display: block;
+}
+.blockMsg h5,
+.blockMsg p {
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+    text-align: center;
+}
+.blockMsg h5 {
+    font-size: 32px;
+}
+
+
+
+
