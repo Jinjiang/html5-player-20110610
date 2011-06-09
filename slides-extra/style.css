@@ -43,6 +43,16 @@ h4 {
 }
 
 
+#download-page {
+    font-size: 32px;
+    text-align: center;
+}
+#download-page a {
+    color: yellow;
+    line-height: 700px;
+}
+
+
 /***** HHH *****/
 .item {
     position: absolute;

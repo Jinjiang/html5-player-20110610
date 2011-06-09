@@ -26,6 +26,10 @@ function keydown(event) {
     else if (event.keyCode == 70) {
         show('person-list');
     }
+    else if (event.keyCode == 71) {
+        show('download-page');
+    }
+
     else if (event.keyCode == 90) {
         hide('hardware-list');
     }
@@ -38,6 +42,10 @@ function keydown(event) {
     else if (event.keyCode == 86) {
         hide('person-list');
     }
+    else if (event.keyCode == 66) {
+        hide('download-page');
+    }
+
     else {
         // console.log(event.keyCode);
     }
